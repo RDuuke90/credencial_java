@@ -56,10 +56,23 @@ public class Main {
                             credencial = gestor.crearCredencial();
                             break;
                         case 2:
-                            gestor.agregarCredencial(credencial);
+                            if (credencial == null) {
+                                System.out.println("No hay credencial en memoria");
+                            } else {
+                                gestor.agregarCredencial(credencial);
+                            }
                             break;
                         case 3: 
-                            System.out.println("Module 3");
+                            System.out.print("Ingrese el servicio a buscar: ");
+                            String servicio = sc.nextLine();
+                            
+                            Credencial busqueda = gestor.buscarCredencial(servicio);
+                            
+                            if (busqueda != null){
+                                System.out.println("La credencial existe!");   
+                            } else {
+                                System.out.println("Credencial no encontrada!");
+                            }
                             break;
                         case 4:
                             System.out.println("Saliendo....");
