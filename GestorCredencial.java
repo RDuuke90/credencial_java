@@ -53,4 +53,14 @@ public class GestorCredencial {
         System.out.println("");
         return credencial;
     }
+    
+    public Credencial buscarCredencial(String servicio)
+    {
+        for(Credencial credencial : this.credenciales){
+            if(credencial.servicio.equalsIgnoreCase(servicio)){
+                return credencial;
+            }
+        }
+        return null;
+    }
 }
